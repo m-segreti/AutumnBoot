@@ -5,10 +5,10 @@ VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp", "c-sharp.csproj", "{59E342CA-5D16-418A-8583-B4F733B3AADA}"
 	ProjectSection(ProjectDependencies) = postProject
-		{B5E7F618-A172-E2AA-3951-FB94D0C7D698} = {B5E7F618-A172-E2AA-3951-FB94D0C7D698}
+		{3461765F-60A1-21BC-764E-FC799869FE2F} = {3461765F-60A1-21BC-764E-FC799869FE2F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "SampleApi.Api\Server.csproj", "{B5E7F618-A172-E2AA-3951-FB94D0C7D698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{3461765F-60A1-21BC-764E-FC799869FE2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,10 @@ Global
 		{59E342CA-5D16-418A-8583-B4F733B3AADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59E342CA-5D16-418A-8583-B4F733B3AADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59E342CA-5D16-418A-8583-B4F733B3AADA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5E7F618-A172-E2AA-3951-FB94D0C7D698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5E7F618-A172-E2AA-3951-FB94D0C7D698}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5E7F618-A172-E2AA-3951-FB94D0C7D698}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5E7F618-A172-E2AA-3951-FB94D0C7D698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3461765F-60A1-21BC-764E-FC799869FE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3461765F-60A1-21BC-764E-FC799869FE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3461765F-60A1-21BC-764E-FC799869FE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3461765F-60A1-21BC-764E-FC799869FE2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
