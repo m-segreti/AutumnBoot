@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp", "c-sharp.csproj", "{59E342CA-5D16-418A-8583-B4F733B3AADA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5E7F618-A172-E2AA-3951-FB94D0C7D698} = {B5E7F618-A172-E2AA-3951-FB94D0C7D698}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApi.Api", "SampleApi.Api\SampleApi.Api.csproj", "{B5E7F618-A172-E2AA-3951-FB94D0C7D698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "SampleApi.Api\Server.csproj", "{B5E7F618-A172-E2AA-3951-FB94D0C7D698}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
