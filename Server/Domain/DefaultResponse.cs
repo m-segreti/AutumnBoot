@@ -2,7 +2,7 @@
 
 namespace Server.Domain;
 
-public sealed record DefaultResponse (
-    [property: JsonProperty("status")] int status,
-    [property: JsonProperty("message")] string message
+public sealed record DefaultResponse(
+    [property: JsonProperty("status")] int Status,
+    [property: JsonProperty("message")] string Message
 );

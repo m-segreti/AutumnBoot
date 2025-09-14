@@ -5,19 +5,32 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace Server.Configuration;
 
-public static class SwaggerConfiguration {
-    public static void configure(SwaggerUIOptions options) {
-        options.RoutePrefix = "api/v1/docs";
+public static class SwaggerConfiguration
+{
+    private const string Version = "v1";
+    
+    public static void UiOptions(SwaggerUIOptions options)
+    {
+        options.SwaggerEndpoint("openapi.json", $"CSharp Server {Version}");
+        options.RoutePrefix = $"api/{Version}/docs";
     }
 
-    public static void OpenApi(SwaggerGenOptions options) {
-        options.SwaggerDoc("v1", openApiInfo());
+    public static void Options(SwaggerOptions options)
+    {
+        options.RouteTemplate = "/api/{documentName}/docs/openapi.json";
     }
 
-    private static OpenApiInfo openApiInfo() {
-        return new OpenApiInfo {
-            Title = "API v1",
-            Version = "v1"
+    public static void OpenApi(SwaggerGenOptions options)
+    {
+        options.SwaggerDoc(Version, OpenApiInfo());
+    }
+
+    private static OpenApiInfo OpenApiInfo()
+    {
+        return new OpenApiInfo
+        {
+            Title = $"CSharp Server API {Version}",
+            Version = Version
         };
     }
 }

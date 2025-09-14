@@ -2,6 +2,7 @@
 
 namespace Server.Services;
 
-public interface IContractService {
-    DefaultResponse handle(Contract contract);
+public interface IContractService
+{
+    DefaultResponse Handle(Contract contract);
 }
