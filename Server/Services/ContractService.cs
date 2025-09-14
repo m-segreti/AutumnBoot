@@ -6,6 +6,8 @@ public sealed class ContractService(ILogger<ContractService> logger) : IContract
 {
     public DefaultResponse Handle(Contract contract)
     {
+        DefaultResponse response;
+
         if (contract.Access.Count > 0)
         {
             foreach (AccessEntry entry in contract.Access)
@@ -15,14 +17,20 @@ public sealed class ContractService(ILogger<ContractService> logger) : IContract
 
                 logger.LogInformation("Access entry => timestamp:{Timestamp} id:{Id}", ts, id);
             }
+
+            response = DefaultResponseBuilder.Builder()
+                .Message("Processed successfully")
+                .Build();
         }
         else
         {
             logger.LogWarning("No 'access' array provided.");
+            response = DefaultResponseBuilder.Builder()
+                .Status(500)
+                .Message("FAILURE!")
+                .Build();
         }
 
-        return DefaultResponseBuilder.Builder()
-            .Message("Processed successfully")
-            .Build();
+        return response;
     }
 }
