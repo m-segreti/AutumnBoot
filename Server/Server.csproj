@@ -8,6 +8,7 @@
         <EnableReadyToRun>true</EnableReadyToRun>
         <PublishTrimmed>false</PublishTrimmed>
         <AssemblyName>CSharpServer</AssemblyName>
+        <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,5 +17,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4"/>
         
         <EmbeddedResource Include="Resources\banner.txt"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\favicon.svg" />
     </ItemGroup>
 </Project>
