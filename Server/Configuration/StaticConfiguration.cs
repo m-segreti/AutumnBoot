@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Builder;
+
 namespace Server.Configuration;
 
 public static class StaticConfiguration
