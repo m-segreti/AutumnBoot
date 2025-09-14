@@ -11,7 +11,7 @@ public sealed class ErrorController : ControllerBase
 {
     [HttpGet]
     public IActionResult HandleError() {
-        Exception? exception = HttpContext.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error;
+        Exception exception = HttpContext.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error;
 
         if (exception is ArgumentException argEx) {
             return BadRequest(new DefaultResponse(400, argEx.Message));
