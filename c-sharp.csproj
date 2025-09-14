@@ -37,5 +37,8 @@
     <None Include=".docs\.gitkeep" />
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
