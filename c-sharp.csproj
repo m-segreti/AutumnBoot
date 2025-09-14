@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.md" />
+    <Content Include="TODO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

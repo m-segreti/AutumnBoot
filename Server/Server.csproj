@@ -11,15 +11,17 @@
         <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
     </PropertyGroup>
 
+    <!-- 3rd Pary Dependencies -->
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.9"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4"/>
-        
-        <EmbeddedResource Include="Resources\banner.txt"/>
     </ItemGroup>
-
+    
+    <!-- Embedded Content -->
     <ItemGroup>
-      <None Include="wwwroot\favicon.svg" />
+        <EmbeddedResource Include="Resources\banner.txt"/>
+        <EmbeddedResource Include="wwwroot\**\*" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.0" />
     </ItemGroup>
 </Project>
