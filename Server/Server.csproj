@@ -1,14 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <!-- Build Configuration -->
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <AssemblyName>CSharpServer</AssemblyName>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>true</SelfContained>
         <PublishSingleFile>true</PublishSingleFile>
         <EnableReadyToRun>true</EnableReadyToRun>
         <PublishTrimmed>false</PublishTrimmed>
-        <AssemblyName>CSharpServer</AssemblyName>
         <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+
+        <!-- Application Name and Version information -->
+        <AssemblyName>AutumnBoot</AssemblyName>
+        <VersionPrefix>0.0.1</VersionPrefix>
+        <VersionSuffix>alpha</VersionSuffix>
+        <Version>$(VersionPrefix)-$(VersionSuffix)</Version>
+        <InformationalVersion>$(Version)</InformationalVersion>
     </PropertyGroup>
 
     <!-- 3rd Pary Dependencies -->
