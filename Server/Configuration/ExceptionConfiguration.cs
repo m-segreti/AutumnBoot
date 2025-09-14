@@ -1,21 +1,25 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using Server.Domain;
+﻿using Microsoft.AspNetCore.Mvc;
+using Server.Domain;
 
-//[ApiController]
-//public sealed class ErrorController : ControllerBase
-//{
-//    [Route("/error")]
-//    public IActionResult HandleError() {
-//        Exception? exception = HttpContext.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error;
+namespace Server.Configuration;
 
-//        if (exception is ArgumentException argEx) {
-//            return BadRequest(new DefaultResponse(400, argEx.Message));
-//        }
+[ApiController]
+[Route("/error")]
+[ApiExplorerSettings(IgnoreApi = true)]
+public sealed class ErrorController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult HandleError() {
+        Exception? exception = HttpContext.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>()?.Error;
 
-//        return Problem(
-//            statusCode: 500,
-//            title: "An unexpected error occurred",
-//            detail: exception?.Message
-//        );
-//    }
-//}
+        if (exception is ArgumentException argEx) {
+            return BadRequest(new DefaultResponse(400, argEx.Message));
+        }
+
+        return Problem(
+            statusCode: 500,
+            title: "An unexpected error occurred",
+            detail: exception?.Message
+        );
+    }
+}
