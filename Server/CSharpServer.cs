@@ -14,7 +14,7 @@ public static class CSharpServer
         builder.Services.AddSingleton<IContractService, ContractService>();
 
         WebApplication server = builder.Build();
-        //app.UseExceptionHandler("/error");
+        server.UseExceptionHandler("/error");
         server.UseSwagger(SwaggerConfiguration.Options);
         server.UseSwaggerUI(SwaggerConfiguration.UiOptions);
         server.MapControllers();
