@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AnsiColors;
+using Microsoft.Extensions.Logging;
 using Server.Domain;
 
 namespace Server.Services;
@@ -7,31 +8,25 @@ public sealed class ContractService(ILogger<ContractService> logger) : IContract
 {
     public DefaultResponse Handle(Contract contract)
     {
-        DefaultResponse response;
-
-        if (contract.Access.Count > 0)
+        if (contract.Access.Count <= 0)
         {
-            foreach (AccessEntry entry in contract.Access)
-            {
-                long ts = entry.Timestamp;
-                string id = entry.Id ?? "<null>";
+            const string warningMessage = "No 'access' array provided.";
+            logger.LogWarning("{Warning}", Ansi.Warning(warningMessage));
 
-                logger.LogInformation("Access entry => timestamp:{Timestamp} id:{Id}", ts, id);
-            }
-
-            response = DefaultResponseBuilder.Builder()
-                .Message("Processed successfully")
-                .Build();
-        }
-        else
-        {
-            logger.LogWarning("No 'access' array provided.");
-            response = DefaultResponseBuilder.Builder()
+            return DefaultResponseBuilder.Builder()
                 .Status(500)
-                .Message("FAILURE!")
+                .Message(warningMessage)
                 .Build();
         }
 
-        return response;
+        foreach (AccessEntry entry in contract.Access)
+        {
+            long ts = entry.Timestamp;
+            string id = entry.Id ?? "<null>";
+
+            logger.LogInformation("Access entry => timestamp:{Timestamp} id:{Id}", ts, id);
+        }
+
+        return DefaultResponseBuilder.Of("Processed successfully");
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Drawing;
+using System.Globalization;
 using System.Reflection;
 using AnsiColors.Domain;
 
@@ -364,5 +365,35 @@ public static class Ansi
     public static string Colorize(string value, string hex)
     {
         return Format(HexColor(AnsiType.Foreground, hex) + value + AnsiConstants.Reset);
+    }
+
+    /// <summary>
+    /// Colors the value to a red (#FF0000) foreground color and appends a reset.
+    /// </summary>
+    /// <param name="value">The text to colorize</param>
+    /// <returns>A printable string with the color applied and a trailing reset.</returns>
+    public static string Error(string value)
+    {
+        return Colorize(value, "#FF0000");
+    }
+    
+    /// <summary>
+    /// Colors the value to an orange (#FF6C37) foreground color and appends a reset.
+    /// </summary>
+    /// <param name="value">The text to colorize</param>
+    /// <returns>A printable string with the color applied and a trailing reset.</returns>
+    public static string Warning(string value)
+    {
+        return Colorize(value, "#FF6C37");
+    }
+    
+    /// <summary>
+    /// Colors the value to a green (#1ED760) foreground color and appends a rest.
+    /// </summary>
+    /// <param name="value">The text to colorize</param>
+    /// <returns>A printable string with the color applied and a trailing reset.</returns>
+    public static string Success(string value)
+    {
+        return Colorize(value, "#1ED760");
     }
 }

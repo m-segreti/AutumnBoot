@@ -10,6 +10,14 @@ public class DefaultResponseBuilder
         return new DefaultResponseBuilder();
     }
 
+    public static DefaultResponse Of(string message)
+    {
+        return new DefaultResponseBuilder
+        {
+            _message = message
+        }.Build();
+    }
+
     public DefaultResponse Build()
     {
         return new DefaultResponse(_status, _message);
