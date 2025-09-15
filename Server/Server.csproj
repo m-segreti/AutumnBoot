@@ -16,12 +16,17 @@
         <Version>$(VersionPrefix)-$(VersionSuffix)</Version>
         <InformationalVersion>$(Version)</InformationalVersion>
     </PropertyGroup>
-
+    
     <!-- 3rd Pary Dependencies -->
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.9"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4"/>
+    </ItemGroup>
+
+    <!-- Multiproject Dependencies -->
+    <ItemGroup>
+        <ProjectReference Include="..\AnsiColors\AnsiColors.csproj" />
     </ItemGroup>
     
     <!-- Embedded Content -->

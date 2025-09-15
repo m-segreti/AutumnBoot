@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{59E342CA-5D16-418A-8583-B4F733B3AADA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>c_sharp</RootNamespace>
-    <AssemblyName>c-sharp</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AutumnBoot</RootNamespace>
+    <AssemblyName>AutumnBoot</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

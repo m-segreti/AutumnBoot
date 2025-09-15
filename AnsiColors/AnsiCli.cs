@@ -2,13 +2,8 @@
 
 namespace AnsiColors;
 
-public static class Program
+public static class AnsiCli
 {
-    public static void Main()
-    {
-        DisplayAll();
-    }
-
     private static void DisplayAll()
     {
         const string message = "Example Text";

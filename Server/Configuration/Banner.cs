@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using AnsiColors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -40,7 +41,7 @@ public static class Banner
             content = content.Replace("{commitId}", versionDetails[1]);
         }
         
-        content = content.Replace("\\x1b", "\u001b");
+        content = Ansi.Format(content);
         content = content.Replace("{datetime}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
         content = content.Replace("{applicationName}", applicationName);
         content = content.Replace("{applicationVersion}", applicationVersion);
