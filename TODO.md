@@ -1,5 +1,9 @@
 # TODO
 
+- [ ] Auto load
+  - [ ] controllers
+  - [ ] Swagger configurations
+  - [ ] HttpClients
 - [ ] PicoCLI to toggle embed vs filesystem Web hosting
 - [ ] MSSQL
 - [ ] Garnet
