@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Server.Configuration;
 using Server.Services;
@@ -15,7 +16,15 @@ public static class AutumnBootApplication
         builder.Services.AddControllers().AddNewtonsoftJson(NewtonsoftSerializer.Configure);
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(SwaggerConfiguration.OpenApi);
+        
+        // Dependency Injection references
         builder.Services.AddSingleton<IContractService, ContractService>();
+        builder.Services.AddSingleton<ISimpleFileService, SimpleFileService>();
+        builder.Services.AddHttpClient("alfred", client =>
+        {
+            client.BaseAddress = new Uri("https://backend.alfred.segreti.io");
+        });
+        
 
         WebApplication server = builder.Build();
         StaticConfiguration.Embedded(server);
