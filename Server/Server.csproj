@@ -27,6 +27,7 @@
     <!-- Multiproject Dependencies -->
     <ItemGroup>
         <ProjectReference Include="..\AnsiColors\AnsiColors.csproj" />
+        <ProjectReference Include="..\OptionalLibrary\OptionalLibrary.csproj" />
     </ItemGroup>
     
     <!-- Embedded Content -->

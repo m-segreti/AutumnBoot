@@ -1,5 +1,8 @@
-﻿namespace Server.Domain;
+﻿using Newtonsoft.Json;
+
+namespace Server.Domain;
 
 public sealed record SimpleFile(
-    string path,
-    string content);
+    [property: JsonProperty("path")] string Path,
+    [property: JsonProperty("content")] string Content
+);

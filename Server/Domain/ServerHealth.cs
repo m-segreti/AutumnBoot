@@ -1,6 +1,8 @@
-﻿namespace Server.Domain;
+﻿using Newtonsoft.Json;
+
+namespace Server.Domain;
 
 public sealed record ServerHealth(
-    string Status,
-    string Version
+    [property: JsonProperty("status")] string Status,
+    [property: JsonProperty("version")] string Version
 );

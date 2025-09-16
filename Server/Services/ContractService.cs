@@ -1,9 +1,11 @@
 ﻿using AnsiColors;
 using Microsoft.Extensions.Logging;
+using Server.Discovery;
 using Server.Domain;
 
 namespace Server.Services;
 
+[Service]
 public sealed class ContractService(ILogger<ContractService> logger) : IContractService
 {
     public DefaultResponse Handle(Contract contract)

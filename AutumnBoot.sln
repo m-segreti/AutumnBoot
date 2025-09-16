@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnsiColors", "AnsiColors\AnsiColors.csproj", "{72167C32-7BAB-4ACC-B364-FC6B2AFF2AD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalLibrary", "OptionalLibrary\OptionalLibrary.csproj", "{69DAF88E-2064-4EBC-B83D-0C919A7411F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{72167C32-7BAB-4ACC-B364-FC6B2AFF2AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72167C32-7BAB-4ACC-B364-FC6B2AFF2AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72167C32-7BAB-4ACC-B364-FC6B2AFF2AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69DAF88E-2064-4EBC-B83D-0C919A7411F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DAF88E-2064-4EBC-B83D-0C919A7411F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DAF88E-2064-4EBC-B83D-0C919A7411F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DAF88E-2064-4EBC-B83D-0C919A7411F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

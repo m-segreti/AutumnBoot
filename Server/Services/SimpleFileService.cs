@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AnsiColors;
 using Microsoft.Extensions.Logging;
+using Server.Discovery;
 
 namespace Server.Services;
 
 /// <inheritdoc cref="ISimpleFileService" />
+[Service(typeof(ISimpleFileService), Lifetime = ServiceType.Scoped)]
 public sealed class SimpleFileService(ILogger<SimpleFileService> logger) : ISimpleFileService
 {
     public void Save(string path, string content)
@@ -28,7 +29,7 @@ public sealed class SimpleFileService(ILogger<SimpleFileService> logger) : ISimp
                 }
                 catch (OperationCanceledException cancelledException)
                 {
-                    logger.LogInformation(cancelledException, "Async Thread canceled [{Thread}]", Environment.CurrentManagedThreadId);
+                    logger.LogDebug(cancelledException, "Async Thread canceled [{Thread}]", Environment.CurrentManagedThreadId);
                 }
                 catch (Exception exception)
                 {

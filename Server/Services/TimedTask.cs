@@ -26,7 +26,7 @@ public sealed class TimedTask : IDisposable
         }
         else
         {
-            _logger.LogInformation("{Message}", message);
+            _logger.LogDebug("{Message}", message);
         }
     }
     
@@ -42,7 +42,7 @@ public sealed class TimedTask : IDisposable
         }
         else
         {
-            _logger.LogInformation("{Message}", message);
+            _logger.LogDebug("{Message}", message);
         }
     }
 
