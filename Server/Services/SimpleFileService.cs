@@ -9,7 +9,7 @@ using Server.Discovery;
 
 namespace Server.Services;
 
-/// <inheritdoc cref="ISimpleFileService" />
+/// <inheritdoc cref="ISimpleFileService"/>
 [Service(typeof(ISimpleFileService), Lifetime = ServiceType.Scoped)]
 public sealed class SimpleFileService(ILogger<SimpleFileService> logger) : ISimpleFileService
 {

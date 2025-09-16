@@ -5,6 +5,7 @@ using Server.Domain;
 
 namespace Server.Services;
 
+/// <inheritdoc cref="IContractService"/>
 [Service]
 public sealed class ContractService(ILogger<ContractService> logger) : IContractService
 {
